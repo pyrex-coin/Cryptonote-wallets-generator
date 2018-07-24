@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title>Monero based offline coins wallets generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+  <link rel="icon" type="image/x-icon" href="assets/images/coin_logo_64.png" />
+
+</head>
+<body>
+        
+<div class="container-fluid">
+    <div class="row">
+        <div class='col-md-12'>
+            <br/>
+            <form>
+                <div class="form-group row">
+                    <label for="example-month-input" class="col-2 col-form-label">Language</label>
+                    <div class="col-10">
+                        <select class="custom-select col-12" id="langSelect"></select>
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    <div class='col-md-10 col-sm-7'>
+                            <button type="button" class="btn btn-rounded btn-block btn-outline-success btn-lg m-t-10" onclick="js:genWallets();">Generate new wallets</button>
+
+                    </div>
+                    <div class='col-md-2 col-sm-5'>
+                            <button type="button" class="btn btn-rounded btn-block btn-outline-warning btn-lg m-t-10" onclick="js:saveFile();">Export</button>
+                    </div>
+                </div>
+            </form>
+
+                <div class="card m-b-20">
+                                       
+                            <div class="card-body">
+                                    <h4 class="card-title">Keys</h4>
+
+                                <div class="profiletimeline">
+                                    <div class="sl-item">
+                                        <div class="sl-left">
+                                            <img src="assets/images/icon_2.png" class="img-circle">
+                                        </div>
+                                        <div class="sl-right">
+                                            <div>
+                                                <a href="javascript:void(0)" class="link">Mnemonic seed</a>
+                                                <p class="m-t-10" id="mnemonic_widget" data-title="Mnemonic seed"></p>
+                                            </div>
+                                            <div class="like-comm m-t-20"> 
+                                                <a href="javascript:void(0)" class="link m-r-10 btn-copy" data-clipboard-target="#mnemonic_widget">Copy</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left">
+                                            <img src="assets/images/icon_3.png" class="img-circle">
+                                        </div>
+                                        <div class="sl-right">
+                                            <div>
+                                                <a href="javascript:void(0)" class="link">Spend key</a>
+                                                <p class="m-t-10" id="spend_key_widget" data-title="Spend key"></p>
+                                            </div>
+                                            <div class="like-comm m-t-20"> 
+                                                <a href="javascript:void(0)" class="link m-r-10 btn-copy" data-clipboard-target="#spend_key_widget">Copy</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left">
+                                            <img src="assets/images/icon_1.png" class="img-circle">
+                                        </div>
+                                        <div class="sl-right">
+                                            <div>
+                                                <a href="javascript:void(0)" class="link">View key</a>
+                                                <p class="m-t-10" id="view_key_widget" data-title="View key"></p>
+                                            </div>
+                                            <div class="like-comm m-t-20"> 
+                                                <a href="javascript:void(0)" class="link m-r-10 btn-copy" data-clipboard-target="#view_key_widget">Copy</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                <div class="card-body">
+                    <h4 class="card-title">Wallets</h4>
+                    <div class="message-box">
+                        <div class="message-widget message-scroll" id="tableAddresses"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalQrCode" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <div id="qrcode" class="text-center align-middle m-t-10"></div>
+                <p class="text-center m-t-10" id="qrCodeText"></p>
+                <button type="button" class="btn btn-secondary m-t-10" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<span class="qrcode" id="address_qr_widget" onclick="js:toggle_qr();"></span>
+<script src="assets/node_modules/popper.js/dist/umd/popper.min.js" ></script>
+<script src="assets/node_modules/jquery/dist/jquery.min.js" ></script>
+<script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script src="assets/node_modules/clipboard/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="assets/js/config.js"></script>
+<script type="text/javascript" src="assets/js/qrcode.min.js"></script>
+<script type="text/javascript" src="assets/node_modules/file-saver/FileSaver.min.js"></script>
+<script type="text/javascript" src="assets/js/mnemonics.js"></script>
+<script type="text/javascript" src="assets/js/libraries.js"></script>
+
+<script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+</html>
