@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Monero based offline coins wallets generator</title>
+  <title>Pyrexcoin Paper Wallet Generator</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,6 +14,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class='col-md-12'>
+			  <img src="assets/images/cryptonote.png" class="mx-auto d-block">
+				<h3 class="text-center">Pyrexcoin Paper Wallet Generator</h3>
             <br/>
             <form>
                 <div class="form-group row">
@@ -25,7 +27,7 @@
 
                 <div class="form-group row ">
                     <div class='col-md-10 col-sm-7'>
-                            <button type="button" class="btn btn-rounded btn-block btn-outline-success btn-lg m-t-10" onclick="js:genWallets();">Generate new wallets</button>
+                            <button type="button" class="btn btn-rounded btn-block btn-outline-success btn-lg m-t-10" onclick="js:genWallets();">Generate new wallet</button>
 
                     </div>
                     <div class='col-md-2 col-sm-5'>
@@ -35,7 +37,12 @@
             </form>
 
                 <div class="card m-b-20">
-                                       
+			   <div class="card-body">
+                    <h4 class="card-title">Wallet</h4>
+                    <div class="message-box">
+                        <div class="message-widget message-scroll" id="tableAddresses"></div>
+                    </div>
+                </div>
                             <div class="card-body">
                                     <h4 class="card-title">Keys</h4>
 
@@ -84,12 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                <div class="card-body">
-                    <h4 class="card-title">Wallets</h4>
-                    <div class="message-box">
-                        <div class="message-widget message-scroll" id="tableAddresses"></div>
-                    </div>
-                </div>
+                
             </div>
 
 
